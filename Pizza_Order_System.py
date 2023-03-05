@@ -1,17 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 #Kütüphaneler
 
 import csv
 from datetime import datetime 
-
-
-# In[2]:
-
 
 #Menu.txt dosyası aç ve write metodu dosyayı her defasında sil ve baştan yaz kullan değişken adı pizzaMenu olsun 
 
@@ -36,13 +26,7 @@ def menu_yaz():
         pizzaMenu.close() 
 
 
-# In[3]:
-
-
 menu_yaz() #Menu.txt İçin Fonksiyon Çağırma
-
-
-# In[4]:
 
 
 #Pizza Sınıfı Tanımlanır (Base & Price)
@@ -58,9 +42,6 @@ class Pizza:
 
     def get_cost(self):
         return self.cost 
-
-
-# In[5]:
 
 
 #Pizza Sınıfından Miras Alan Alt Sınıflar
@@ -86,8 +67,6 @@ class sadePizza(Pizza):
         super().__init__("Sade Pizza", 50.00)
 
 
-# In[6]:
-
 
 # super().__init__("Klasik Pizza", 70)
 
@@ -96,8 +75,6 @@ class sadePizza(Pizza):
 #        self.description = "Klasik pizza"
 #        self.cost = 70.0
 
-
-# In[7]:
 
 
 #Decorator Sınıfı
@@ -120,9 +97,6 @@ class Decorator(Pizza):
     
     def get_saucedescription(self):
         return self.description
-
-
-# In[8]:
 
 
 #Decoratorden Miras Alan Soslar
@@ -163,9 +137,6 @@ class noextra(Decorator):
         super().__init__(component, "Extra Yok", 0.00)
 
 
-# In[9]:
-
-
 #ID Number
 
 def isValidID(id_number):
@@ -183,8 +154,6 @@ def isValidID(id_number):
     return True
 
 
-# In[10]:
-
 
 #Kredi Kartı
 
@@ -194,8 +163,6 @@ def isValidDebitCard(debitNo):
         return True   
 
 
-# In[11]:
-
 
 #Menu.txt Göster
 
@@ -204,9 +171,6 @@ def show_menu():
     with open('Menu.txt', 'r') as file:
         pMenu = file.read()
         print(pMenu)
-
-
-# In[12]:
 
 
 #Main Fonksiyon
@@ -307,17 +271,6 @@ def main():
         database = csv.writer(order_info) 
         database.writerow([ad, id_number, kkNo, description, cost, dateTime, kkPass])
                 
-            
-
-
-# In[ ]:
 
 
 main()
-
-
-# In[ ]:
-
-
-
-
